@@ -7,4 +7,3 @@ import org.junit.runners.Suite;
 @Suite.SuiteClasses( {ScholarshipCalculatorImplTest.class, ScholarshipCalculatorImplTest2.class})
 public class ScholarshipSuite {
 }
-
