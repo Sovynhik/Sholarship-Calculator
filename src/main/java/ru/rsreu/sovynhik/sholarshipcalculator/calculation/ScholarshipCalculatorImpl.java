@@ -2,10 +2,12 @@ package ru.rsreu.sovynhik.sholarshipcalculator.calculation;
 
 public class ScholarshipCalculatorImpl implements IscholarshipCalculator
 {
-    public static final double BASIC_SCHOLARSHIP = 100;
+    public static final double BASIC_SCHOLARSHIP = 1000;
+
     public double scholarshipCalculate(double stepUpCoefficient) {
         return BASIC_SCHOLARSHIP * stepUpCoefficient;
     }
+
     public double stepUpCoefficientCalculate(int averageMark) throws NotSuchMarkException {
         return switch (averageMark) {
             case 3 -> 1;
@@ -15,4 +17,3 @@ public class ScholarshipCalculatorImpl implements IscholarshipCalculator
         };
     }
 }
-
