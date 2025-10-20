@@ -6,11 +6,13 @@ import org.junit.runner.notification.RunNotifier;
 
 public class ScholarshipRunner extends BlockJUnit4ClassRunner {
     private ScholarshipRunListener runListener;
-    public ScholarshipRunner(Class<ScholarshipRunListener> clazz)
-            throws InitializationError {
+
+    public ScholarshipRunner(Class<?> clazz) throws InitializationError {
         super(clazz);
         runListener = new ScholarshipRunListener();
     }
+
+    @Override
     public void run(RunNotifier notifier) {
         notifier.addListener(runListener);
         super.run(notifier);

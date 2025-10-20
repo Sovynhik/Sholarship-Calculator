@@ -1,50 +1,38 @@
 package calculation.test;
 
-import org.junit.runner.notification.RunListener;
 import org.junit.runner.Description;
 import org.junit.runner.Result;
-import org.junit.runner.RunWith;
 import org.junit.runner.notification.Failure;
-
-@RunWith(ScholarshipRunner.class)
+import org.junit.runner.notification.RunListener;
 
 public class ScholarshipRunListener extends RunListener {
     @Override
     public void testStarted(Description description) throws Exception {
-        System.out.println("тест стартовал: " +
-                description.getDisplayName());
+        System.out.println("Тест стартовал: " + description.getDisplayName());
     }
 
     @Override
     public void testFinished(Description description) throws Exception {
-        System.out.println("тест завершен: " +
-                description.getDisplayName() + "\n----");
+        System.out.println("Тест завершен: " + description.getDisplayName() + "\n----");
     }
 
     @Override
     public void testFailure(Failure failure) throws Exception {
-        System.out.println("тест провален с исключением: "
-                + failure.getException());
+        System.out.println("Тест провален с исключением: " + failure.getException());
     }
 
     @Override
     public void testIgnored(Description description) throws Exception {
-        System.out.println("тест игнорирован: " +
-                description.getDisplayName() + "\n----");
+        System.out.println("Тест игнорирован: " + description.getDisplayName() + "\n----");
     }
 
     @Override
     public void testRunFinished(Result result) throws Exception {
-        System.out.println("результаты выполнения тестов:");
-        System.out.println("время выполнения: (" + result.getRunTime()
-                + ") millis");
-        System.out.println("было запущено тестов: " +
-                result.getRunCount());
-        System.out.println("провалено тестов: " +
-                result.getFailureCount());
-        System.out.println("игнорировано тестов: " +
-                result.getIgnoreCount());
-        System.out.println("все тесты завершены успешно: "
-                + result.wasSuccessful());
+        System.out.println("Результаты выполнения тестов:");
+        System.out.println("Время выполнения: " + result.getRunTime() + " ms");
+        System.out.println("Запущено тестов: " + result.getRunCount());
+        System.out.println("Провалено тестов: " + result.getFailureCount());
+        System.out.println("Игнорировано тестов: " + result.getIgnoreCount());
+        System.out.println("Все тесты завершены успешно: " + result.wasSuccessful());
     }
 }
